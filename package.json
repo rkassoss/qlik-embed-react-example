@@ -1,0 +1,28 @@
+{
+  "name": "qlik-embed-react-example",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "prettier": "@qlik/prettier-config",
+  "dependencies": {
+    "@qlik/embed-react": "0.3.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@qlik/eslint-config": "0.4.21",
+    "@qlik/prettier-config": "0.4.0",
+    "@qlik/tsconfig": "0.1.6",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@vitejs/plugin-react-swc": "3.3.2",
+    "eslint": "8.50.0",
+    "typescript": "5.2.2",
+    "vite": "4.4.9",
+    "vite-plugin-mkcert": "1.16.0"
+  }
+}
