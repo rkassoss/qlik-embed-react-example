@@ -1,0 +1,15 @@
+/* App.css */
+
+.main-app {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}

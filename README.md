@@ -17,7 +17,7 @@ You need to have access to a QCS tenant and you need to setup an OAuth Client.
 2. Modify some config in `App.tsx`
    1. Change the host in the `hostConfig` variable to a QCS tenant you have access to
    2. Change the clientId to your OAuth clientId
-   3. Set the App ID to an app you have access to
-   4. Set a Sheet ID (optional)
+   3. Go into the examples folder and set the App ID to an app you have access to on the files
+   4. Also change Sheet ID (optional) and/or the Object ID in the examples
 3. Start the dev server `npm run dev`
 4. Open <https://localhost:5173>

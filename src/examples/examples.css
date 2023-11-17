@@ -1,0 +1,21 @@
+.selections-bar {
+  margin: 8px;
+  min-height: 42px;
+  border: 1px solid #bbb;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.viz {
+  margin: 8px;
+  height: 80px;
+  border: 1px solid #bbb;
+  flex-grow: 1;
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  box-sizing: border-box;
+  overflow: auto;
+  position: relative;
+}

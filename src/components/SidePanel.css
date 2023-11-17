@@ -1,0 +1,25 @@
+/* SidePanel.css */
+.side-panel {
+  color: white;
+  padding: 10px 20px;
+  width: 150px;
+  position: relative;
+  flex: 0 1 auto;
+}
+
+.side-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-panel ul li {
+  padding: 10px 0;
+}
+
+.side-panel ul li a {
+  text-decoration: none;
+}
+
+.side-panel ul li a:hover {
+  color: #007bff;
+}

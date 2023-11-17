@@ -1,26 +1,35 @@
-import { QlikEmbed, QlikEmbedConfig } from "@qlik/embed-react";
+import { QlikEmbedConfig, type HostConfig } from "@qlik/embed-react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import SidePanel from "./components/SidePanel";
+import TopBar from "./components/TopBar";
+import AnalyticsChart from "./examples/AnalyticsChart";
+import ClassicApp from "./examples/ClassicApp";
 
-const hostConfig = {
-  host: "<Change This to QCS Tenant",
-  clientId: "<Change to clientID>",
+const hostConfig: HostConfig = {
+  host: "<tenant.qlikcloud.com>",
+  clientId: "<client-id>",
   redirectUri: "https://localhost:5173/oauth-callback.html",
   accessTokenStorage: "session",
-  authType: "Oauth2",
+  authType: "oauth2",
 };
-const appId = "Set an App ID";
-const sheetId = ""; // sheet id or empty string
 
 export default () => (
-  // @ts-expect-error There's som missing typery here
   <QlikEmbedConfig.Provider value={hostConfig}>
-    <div className="container">
-      <h1>Qlik Embed with React</h1>
-      <div className="selections-bar">
-        <QlikEmbed ui="selections" appId={appId} />
-      </div>
-      <div className="viz">
-        <QlikEmbed ui="classic/app" app={appId} sheet={sheetId} />
-      </div>
+    <TopBar />
+    <div className="main-app">
+      <Router>
+        <SidePanel />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/classic-app" element={<ClassicApp />} />
+            <Route path="/analytics-chart" element={<AnalyticsChart />} />
+            {/* Add more routes here */}
+          </Routes>
+        </div>
+      </Router>
     </div>
   </QlikEmbedConfig.Provider>
 );
