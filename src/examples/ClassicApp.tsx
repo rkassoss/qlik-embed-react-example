@@ -3,7 +3,7 @@ import "./examples.css";
 
 const ClassicApp = (): JSX.Element => (
   <div className="container">
-    <h1>Qlik Embed React - qlik sense app with selection bar</h1>
+    <h1>Qlik Embed React - Qlik Sense app with selection bar</h1>
     <div className="selections-bar">
       <QlikEmbed ui="analytics/selections" appId={appId} />
     </div>
@@ -14,6 +14,6 @@ const ClassicApp = (): JSX.Element => (
 );
 
 const appId = "<app-id>";
-const sheetId = "<sheet-ide>";
+const sheetId = "<sheet-id>";
 
 export default ClassicApp;

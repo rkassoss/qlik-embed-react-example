@@ -3,7 +3,7 @@ import "./examples.css";
 
 const ClassicApp = (): JSX.Element => (
   <div className="container">
-    <h1>Qlik Embed React - single chart with selection bar</h1>
+    <h1>Qlik Embed React - Single chart with selection bar</h1>
     <div className="selections-bar">
       <QlikEmbed ui="analytics/selections" appId={appId} />
     </div>
