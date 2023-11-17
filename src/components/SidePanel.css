@@ -5,6 +5,7 @@
   width: 150px;
   position: relative;
   flex: 0 1 auto;
+  border-right: 1px solid #bbb;
 }
 
 .side-panel ul {
