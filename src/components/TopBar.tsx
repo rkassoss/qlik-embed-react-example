@@ -1,11 +1,5 @@
 import "./TopBar.css";
 
-const TopBar = () => (
-  <div className="top-bar">
-    <div />
-    <div>Qlik Embed Examples</div>
-    <div />
-  </div>
-);
+const TopBar = () => <div className="top-bar">Qlik Embed Examples</div>;
 
 export default TopBar;

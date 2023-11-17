@@ -8,13 +8,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-.top-bar-select {
-  background-color: #333;
-  color: white;
-  font-size: large;
-  flex: 0 1 auto;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-}
