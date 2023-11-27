@@ -13,7 +13,7 @@ const ClassicApp = (): JSX.Element => (
   </div>
 );
 
-const appId = "<app-id>";
-const sheetId = "<sheet-id>";
+const appId = "d6152f1d-c366-4471-8aa6-7ae473e63f59";
+const sheetId = "e3c5da86-bc30-4fd0-92e0-7ffeeb25450f";
 
 export default ClassicApp;

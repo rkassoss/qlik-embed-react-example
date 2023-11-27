@@ -8,11 +8,12 @@ import AnalyticsChart from "./examples/AnalyticsChart";
 import ClassicApp from "./examples/ClassicApp";
 
 const hostConfig: HostConfig = {
-  host: "<tenant.qlikcloud.com>",
-  clientId: "<client-id>",
-  redirectUri: "https://localhost:5173/oauth-callback.html",
+  host: process.env.REACT_APP_TENANT_HOST,
+  clientId: process.env.REACT_APP_TENANT_CLIENTID || "",
+  redirectUri: process.env.REACT_APP_TENANT_REDIRECTURI,
   accessTokenStorage: "session",
   authType: "oauth2",
+  autoRedirect:true
 };
 
 export default () => (
