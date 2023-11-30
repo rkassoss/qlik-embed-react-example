@@ -6,7 +6,7 @@ import SidePanel from "./components/SidePanel";
 import TopBar from "./components/TopBar";
 import AnalyticsChart from "./examples/AnalyticsChart";
 import ClassicApp from "./examples/ClassicApp";
-import CustomChart from "./examples/CustomChart";
+import CustomCharts from "./examples/CustomCharts";
 
 const hostConfig: HostConfig = {
   host: import.meta.env.VITE_TENANT_HOST,
@@ -28,7 +28,7 @@ export default () => (
             <Route path="/" element={<Home />} />
             <Route path="/classic-app" element={<ClassicApp />} />
             <Route path="/analytics-chart" element={<AnalyticsChart />} />
-            <Route path="/custom-chart" element={<CustomChart />} />
+            <Route path="/custom-charts" element={<CustomCharts />} />
             {/* Add more routes here */}
           </Routes>
         </div>

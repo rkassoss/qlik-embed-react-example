@@ -36,6 +36,6 @@ export default defineConfig(() => ({
     },
   },
   optimizeDeps: {
-    include: ["react/jsx-runtime"],
+    include: ["react/jsx-runtime", "emotion/styled"],
   },
 }));

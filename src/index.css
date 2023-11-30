@@ -21,6 +21,17 @@ html {
   box-sizing: border-box;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.row > * {
+  flex: 1 0 auto;
+}
+
 #root {
   position: relative;
   height: 100%;

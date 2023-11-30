@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type FC } from 'react';
 import { QlikEmbed, type QlikEmbedRefApi } from "@qlik/embed-react";
-import "./examples.css";
+import Card from '@mui/material/Card';
+import "../examples/examples.css";
+import { Box } from '@mui/material';
 
-export const CustomCharts = () => {
+interface KPIProps {
+  appId: string,
+  objectId: string,
+}
+
+const CustomKPI : FC<KPIProps> = ({ appId, objectId }): JSX.Element => {
   const [objTitle, setObjTitle] = useState(null);
   const [objSubTitle, setObjSubTitle] = useState(null);
   const [mainKpi, setMainKpi] = useState(null);
+  const [secKpi, setSecKpi] = useState(null);
 
   // Create a state variable
   const [chartApi, setChartRefApi] = useState<QlikEmbedRefApi<"analytics/chart"> | null>(null);
@@ -15,50 +23,55 @@ export const CustomCharts = () => {
     void (async () => {
       if (chartApi) {
         const doc = await chartApi.getDoc();
-        console.log("doc", doc);
-
-        
+        // console.log("doc", doc);
         const list = await doc.getSheetList();
-        console.log("list", list);
+        // console.log("list", list);
         const objectTest = await doc.getObject("mTjVeM");
-        console.log("objectTest", objectTest);
+        // console.log("objectTest", objectTest);
         const chartRefApi = await chartApi.getChartRefApi();
-        console.log("chartRefApi", chartRefApi);
-
+        // console.log("chartRefApi", chartRefApi);
 
         const object = await chartApi.getObject();
         let layout = await object.getLayout();
+        console.log("layout", layout);
         setObjTitle(layout.title);
         setObjSubTitle(layout.subtitle);
         setMainKpi(layout.qHyperCube.qGrandTotalRow[0].qText);
+        setSecKpi(layout.qHyperCube.qGrandTotalRow[1].qText);
         object.on("changed", async () => {
           layout = await object.getLayout();
           setObjTitle(layout.title);
           setObjSubTitle(layout.subtitle);
           setMainKpi(layout.qHyperCube.qGrandTotalRow[0].qText);
+          setSecKpi(layout.qHyperCube.qGrandTotalRow[1].qText);
         });
       }
     })();
   }, [chartApi]);
 
   return (
-    <div className="container">
-      <h1>Qlik Embed React - use QlikEmbedRefApi to render the chart yourself</h1>
-      <div className="selections-bar">
-        <QlikEmbed ui="analytics/selections" appId={appId} />
-      </div>
+    <>
+      <Card variant="outlined">
+        <Box
+          sx={{
+            p: 1,
+            borderRadius: 2,
+          }}
+        >
         { objTitle && <h1>{ objTitle }</h1> }
         { objSubTitle && <p>{ objSubTitle }</p> }
-        { mainKpi && <h2>{ mainKpi }</h2> }
+        <div className="row">
+          { mainKpi && <h2>{ mainKpi }</h2> }
+          { secKpi && <h3>{ secKpi }</h3> }
+        </div>
+        </Box>
+      </Card>
       <div className="hidden-viz">
         {/* Send in the "update state" function  as ref */}
         <QlikEmbed ui="analytics/chart" appId={appId} objectId={objectId} ref={setChartRefApi} />
       </div>
-    </div>
+    </>
   );
 };
 
-const appId = "d6152f1d-c366-4471-8aa6-7ae473e63f59";
-const objectId = "mTjVeM";
-
-export default CustomCharts;
+export default CustomKPI;
