@@ -6,11 +6,12 @@ import SidePanel from "./components/SidePanel";
 import TopBar from "./components/TopBar";
 import AnalyticsChart from "./examples/AnalyticsChart";
 import ClassicApp from "./examples/ClassicApp";
+import CustomChart from "./examples/CustomChart";
 
 const hostConfig: HostConfig = {
-  host: process.env.REACT_APP_TENANT_HOST,
-  clientId: process.env.REACT_APP_TENANT_CLIENTID || "",
-  redirectUri: process.env.REACT_APP_TENANT_REDIRECTURI,
+  host: import.meta.env.VITE_TENANT_HOST,
+  clientId: import.meta.env.VITE_TENANT_CLIENTID,
+  redirectUri: import.meta.env.VITE_TENANT_REDIRECTURI,
   accessTokenStorage: "session",
   authType: "oauth2",
   autoRedirect:true
@@ -27,6 +28,7 @@ export default () => (
             <Route path="/" element={<Home />} />
             <Route path="/classic-app" element={<ClassicApp />} />
             <Route path="/analytics-chart" element={<AnalyticsChart />} />
+            <Route path="/custom-chart" element={<CustomChart />} />
             {/* Add more routes here */}
           </Routes>
         </div>
