@@ -14,6 +14,9 @@ const SidePanel = () => (
         <Link to="/analytics-chart">Analytics Chart</Link>
       </li>
       <li>
+        <Link to="/analytics-sheet">Analytics Sheet</Link>
+      </li>
+      <li>
         <Link to="/custom-charts">Custom Charts</Link>
       </li>
       {/* Add more links as needed */}

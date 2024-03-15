@@ -1,5 +1,6 @@
 import { QlikEmbed } from '@qlik/embed-react';
 import CustomKPI from '../components/CustomKPI';
+import CustomBarChart from '../components/CustomBarChart';
 import "./examples.css";
 
 const CustomCharts = () => (
@@ -16,8 +17,22 @@ const CustomCharts = () => (
       <CustomKPI appId={appId} objectId="jhTmTRy" />
     </div>
 
-    <div className="viz">
-      <QlikEmbed ui="analytics/chart" appId={appId} objectId="3688b116-7f39-440a-872a-644f324e17ea" />
+    <div className="row">
+      <div className="viz" style={{ height: "500px" }}>
+        <QlikEmbed ui="analytics/chart" appId={appId} objectId="678b46e5-efd2-406d-9493-bf0a7e99de4f" />
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="viz" style={{ height: "500px" }}>
+        <CustomBarChart appId={appId} objectId="SqDbku" />
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="viz" style={{ height: "500px" }}>
+        <QlikEmbed ui="analytics/chart" appId={appId} objectId="RdPNMDa" />
+      </div>
     </div>
   </div>
 );
