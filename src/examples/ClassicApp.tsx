@@ -3,7 +3,7 @@ import "./examples.css";
 
 const ClassicApp = (): JSX.Element => (
   <div className="container">
-    <h1>Qlik Embed React - Qlik Sense app with selection bar</h1>
+    <h1>Qlik Embed React - ui="classic/app"</h1>
     <div className="viz">
       <QlikEmbed ui="classic/app" app={appId} sheet={sheetId} />
     </div>

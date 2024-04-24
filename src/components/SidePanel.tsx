@@ -19,6 +19,12 @@ const SidePanel = () => (
       <li>
         <Link to="/custom-charts">Custom Charts</Link>
       </li>
+      <li>
+        <Link to="/sheet-list">Sheet List</Link>
+      </li>
+      <li>
+        <Link to="/classic-charts">Classic Charts</Link>
+      </li>
       {/* Add more links as needed */}
     </ul>
   </div>
